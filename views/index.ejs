@@ -13,6 +13,7 @@
             width: 100%;
             height: 70px;
             display: flex;
+            z-index: 1001;
         }
 
         #navh3 {
@@ -30,19 +31,38 @@
         #navbuttonbar {
             margin-left: auto;
         }
+
+        #loader {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100vw;
+            height: calc(100vh - 70px);
+            background: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            z-index: 1000;
+        }
     </style>
 </head>
 
 <body>
-    <div id="navbar">
+    <nav id="navbar">
         <h3 id="navh3">Latest F1 Race</h3>
         <div id="navbuttonbar">
             <button class="navbutton" onclick="allRacesButtonClick()">All Races</button>
             <button class="navbutton" onclick="menuButtonClick()">Menu</button>
         </div>
-    </div>
-    <div id="leaderbord-holder"></div>
-    <div id="race-Track"></div>
+    </nav>
+    <main>
+        <div id="loader">
+            <h3>Aan het laden...</h3>
+        </div>
+        <div id="leaderbord-holder"></div>
+        <div id="race-Track"></div>
+    </main>
 </body>
 
 <script>

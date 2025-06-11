@@ -12,9 +12,15 @@ let driverName = '';
 async function init() {
     console.log('Page loaded and self-invoking function executed.');
 
-    const locationData = await getApiData();
-    const leaderbordData = await getLeaderbordData();
-    const drivers = await getDriverData();
+    document.getElementById('loader').style.display = 'flex';
+
+    const [locationData, leaderbordData, drivers] = await Promise.all([
+        getApiData(),
+        getLeaderbordData(),
+        getDriverData()
+    ]);
+
+    document.getElementById('loader').style.display = 'none';
 
     setInterval(() => {
         const raceTrack = document.getElementById('race-Track');
