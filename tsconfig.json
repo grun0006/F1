@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "target": "es2022",
+        "strict": false,
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
+        "removeComments": true,
+        "outDir": "./build/",
+        "noEmitOnError": true,
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        // "allowImportingTsExtensions": true,
+        // "emitDeclarationOnly": true,
+        "declaration": true,
+        // "rootDir": "./src"
+    },
+    "include": [
+        "src/**/*",
+        "prisma/seed.ts", "prisma/types.ts",
+    ],
+    "exclude": [
+        "build",
+        "public",
+        "node_modules",
+        "**/*.spec.ts",
+        "postcss.config.js",
+        "tailwind.config.js",
+    ]
+}

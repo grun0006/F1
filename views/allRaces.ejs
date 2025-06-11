@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>All Races</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="./js/ajax.js"></script>
+    <script type="module" src="./js/allRaces.js"></script>
+    <style>
+        #navbar {
+            background-color: rgb(152, 152, 152);
+            width: 100%;
+            height: 70px;
+            display: flex;
+        }
+
+        #navh3 {
+            font-size: 40px;
+        }
+
+        .navbutton {
+            background-color: rgb(118, 118, 118);
+            height: 100%;
+            width: 100px;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        #navbuttonbar {
+            margin-left: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <h3 id="navh3">All Races</h3>
+        <div id="navbuttonbar">
+            <button class="navbutton" onclick="allRacesButtonClick()">Latest Race</button>
+            <button class="navbutton" onclick="menuButtonClick()">Menu</button>
+        </div>
+    </div>
+
+    <div id="allRaces"></div>
+</body>
+
+<script>
+    function allRacesButtonClick() {
+        location.href='/';
+    }
+
+    function menuButtonClick() {}
+</script>
+
+</html>
