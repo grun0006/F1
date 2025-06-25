@@ -5,10 +5,7 @@ import axios from 'axios';
 const app = express();
 const PORT = 3001;
 
-app.use(cors({
-  origin: 'http://localhost:3011',
-  methods: ['GET', 'POST'],
-}));
+app.use(cors());
 
 async function fetchWithRetry(url, retries = 6, delay = 1000) {
   for (let i = 0; i < retries; i++) {
