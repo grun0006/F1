@@ -5,7 +5,10 @@ import axios from 'axios';
 const app = express();
 const PORT = 3001;
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://f1racewebsite.onrender.com/',
+  methods: ['GET', 'POST'],
+}));
 
 async function fetchWithRetry(url, retries = 6, delay = 1000) {
   for (let i = 0; i < retries; i++) {
