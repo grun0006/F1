@@ -127,7 +127,7 @@ const getApiData = async () => {
     const drivers = await getData('https://api.openf1.org/v1/drivers?session_key=latest');
 
     const promises = drivers.map(driver => 
-        getData('https://f1racewebsite.onrender.com/api/locations/' + driver.driver_number)
+        getData('http://localhost:3001/api/locations/' + driver.driver_number)
     );
 
     const dataArray = await Promise.all(promises);

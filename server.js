@@ -6,7 +6,7 @@ const app = express();
 const PORT = 3001;
 
 app.use(cors({
-  origin: 'https://f1racewebsite.onrender.com',
+  origin: 'http://localhost:3011',
   methods: ['GET', 'POST'],
 }));
 
@@ -44,5 +44,5 @@ app.get('/api/locations/:driverNumber', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Backend draait op https://f1racewebsite.onrender.com:${PORT}`);
+  console.log(`Backend draait op http://localhost:${PORT}`);
 });
