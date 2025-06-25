@@ -6,7 +6,7 @@ const app = express();
 const PORT = 3001;
 
 app.use(cors({
-  origin: 'https://f1racewebsite.onrender.com/',
+  origin: 'https://f1racewebsite.onrender.com',
   methods: ['GET', 'POST'],
 }));
 
