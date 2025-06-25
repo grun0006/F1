@@ -17,10 +17,12 @@ async function init() {
     const [locationData, leaderbordData, drivers] = await Promise.all([
         getApiData(),
         getLeaderbordData(),
-        getDriverData()
+        getDriverData(),
     ]);
 
     document.getElementById('loader').style.display = 'none';
+
+    console.log(locationData);
 
     setInterval(() => {
         const raceTrack = document.getElementById('race-Track');
@@ -123,12 +125,12 @@ function findClosestPositionEntry(positionData, targetDateStr, driverNumber) {
 
 const getApiData = async () => {
     const drivers = await getData('https://api.openf1.org/v1/drivers?session_key=latest');
-    let dataArray = []
 
-    for (const driver of drivers) {
-        const data = await getData('https://api.openf1.org/v1/location?session_key=latest&driver_number=' + driver.driver_number);
-        dataArray.push(data)
-    }
+    const promises = drivers.map(driver => 
+        getData('http://localhost:3001/api/locations/' + driver.driver_number)
+    );
+
+    const dataArray = await Promise.all(promises);
 
     return dataArray;
 };
